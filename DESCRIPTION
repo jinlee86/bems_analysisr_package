@@ -1,0 +1,13 @@
+Package: BEMSRAPI
+Type: Package
+Title: BEMS (EDAS) System API  
+Version: 0.1.0
+Author: person(given = "Yong Jin", 
+    family="Lee",email = "yjlee@mobigen.com", role="cre")
+Description: R library for interacting with BEMS (EDAS) System 
+Depends:
+    R (>= 3.2.0)
+Encoding: UTF-8
+LazyData: true
+Imports: RMySQL
+RoxygenNote: 6.0.1
