@@ -2,7 +2,7 @@
 #'
 #' @keywords  analysis
 #' @import optparse
-#' @family BEMS analysis model API
+#' @family EDAS analysis model API
 #' @examples
 #' modelInit()
 #' @export
@@ -77,7 +77,7 @@ initModelOutputs <- function(){
 #'
 #' @keywords  analysis
 #' @import optparse
-#' @family BEMS analysis model API
+#' @family EDAS analysis model API
 #' @examples
 #' saveMsg("Hello! World!")
 #' @export
@@ -90,7 +90,7 @@ registerMessage <- function(msg)
 #'
 #' @keywords  analysis
 #' @import optparse
-#' @family BEMS analysis model API
+#' @family EDAS analysis model API
 #' @examples
 #' modelInit()
 #' @export
@@ -102,7 +102,7 @@ registerPlot <- function(plot, plotName=NA, replace=FALSE){
 #'
 #' @keywords  analysis
 #' @import optparse
-#' @family BEMS analysis model API
+#' @family EDAS analysis model API
 #' @examples
 #' modelInit()
 #' @export
