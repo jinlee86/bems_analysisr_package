@@ -1,6 +1,5 @@
 library(testthat)
-library(BEMSRAPI)
+library(EDAS)
 
-context("DB Initialization")
 
-BEMSRAPI::dbInit("t", "t")
+

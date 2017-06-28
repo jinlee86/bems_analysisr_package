@@ -1,8 +1,7 @@
-#' EDAS Analysis Model Initialization Method
+#' EDAS Analysis Model API - EDAS Analysis Model Initialization Method
 #'
-#' @keywords  analysis
 #' @import optparse
-#' @family EDAS analysis model API
+#' @family EDAS
 #' @examples
 #' modelInit()
 #' @export
@@ -33,18 +32,17 @@ modelInit <- function()
     stop("Output directory is not specified", call.=FALSE)
   } 
  
-  BEMSRAPI::initModelOutputs()  
+  EDAS::initmodel()  
 }
 
 #' EDAS Analysis Model - Show Message 
 #'
-#' @keywords  analysis
 #' @import optparse
-#' @family BEMS analysis model API
+#' @family EDAS
 #' @examples
 #' initModels()
 #' @export
-initModelOutputs <- function(){
+edas.initmodel <- function(){
   if (length( intersect(search(), "EDAS_ANALYSIS_MODEL_PLOTS") ) > 0){
     detach(EDAS_ANALYSIS_MODEL_PLOTS)
   }
@@ -73,41 +71,6 @@ initModelOutputs <- function(){
 }
 
 
-#' EDAS Analysis Model - Show Message 
-#'
-#' @keywords  analysis
-#' @import optparse
-#' @family EDAS analysis model API
-#' @examples
-#' saveMsg("Hello! World!")
-#' @export
-registerMessage <- function(msg)
-{
-  
-}
 
-#' EDAS Analysis Model - Show Plots 
-#'
-#' @keywords  analysis
-#' @import optparse
-#' @family EDAS analysis model API
-#' @examples
-#' modelInit()
-#' @export
-registerPlot <- function(plot, plotName=NA, replace=FALSE){
-  
-}
-
-#' EDAS Analysis Model - Register Tables
-#'
-#' @keywords  analysis
-#' @import optparse
-#' @family EDAS analysis model API
-#' @examples
-#' modelInit()
-#' @export
-registerTable <- function(df, tableName=NA, replace=FALSE){
-  
-}
 
 

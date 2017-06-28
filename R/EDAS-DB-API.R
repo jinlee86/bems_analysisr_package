@@ -1,6 +1,9 @@
 #' EDAS DB API Class 
+#' EDAS.DB.API Class
+#' EDAS DB 접속 정보 관리
 #' 
 #' @import methods
+#' @family EDAS
 #' @export EDAS.DB.API
 #' @exportClass EDAS.DB.API
 EDAS.DB.API <- setClass(Class="EDAS.DB.API",

@@ -1,6 +1,6 @@
-Package: BEMSRAPI
+Package: EDAS
 Type: Package
-Title: BEMS (EDAS) System API  
+Title: EDAS System R Package 
 Version: 0.1.0
 Author: person(given = "Yong Jin", 
     family="Lee",email = "yjlee@mobigen.com", role="cre")

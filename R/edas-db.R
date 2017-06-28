@@ -1,18 +1,23 @@
-#' EDAS DB Connection Maker
+#' EDAS DB Integration API Interface - EDAS DB Connection Interface
+#' EDAS DB 접속 인터페이스 
+#' 
+#' @param username EDAS DataBase User Name - 접속정보 계정명
+#' @param passwd EDAS DataBase Password - 접속정보 계정비번  
+#' @param dbName EDAS DataBase Name - 접속 DB명 
+#' @param host DataBase Server IP Addrerss - EDAS DataBase 서버 정보 
+#' @param port DataBase Server Port - EDAS Database 서버 포트 정보
 #'
-#' @param username EDAS DataBase User Name
-#' @param passwd EDAS DataBase Password
-#' @param dbName EDAS DataBase Name
-#' @param host DataBase Server IP Addrerss
-#' @param port DataBase Server Port
-#'
-#' @return EDAS DB Connection, Tables and Attributes
+#' @return EDAS.DB.API 
 #'
 #' @import RMySQL
-#' @family EDAS DB Integration API Interface
+#' @family EDAS
 #' @examples
-#' edas.db("TestUser","TestPassword","edas")
-#' edas.db("TestUser","TestPassword","edas", host="10.0.0.1", port=1234)
+#' db_server <- "10.0.0.1" 
+#' db_port <- 13306
+#' db_username <- "test"
+#' db_password <- "xxxx"
+#' db_name <- "edas"
+#' dbConnector <- edas.db(db_username, db_password, db_name, db_server, db_port)
 #' @export
 
 edas.db <- function(username, password, database, host, port){
@@ -33,7 +38,7 @@ edas.db <- function(username, password, database, host, port){
             serverIP=host,
             serverPort=port
   )
-  connector <- edas.db.createConnection(obj) 
+  connector <- EDAS::edas.db.api.createConnection(obj) 
   obj@tablelist <- RMySQL::dbListTables(connector)  
   obj@tables <- vector(mode="list")
   

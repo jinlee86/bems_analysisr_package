@@ -1,4 +1,4 @@
 library(testthat)
-library(BEMSRAPI)
+library(EDAS)
 
-test_check("BEMSRAPI")
+
