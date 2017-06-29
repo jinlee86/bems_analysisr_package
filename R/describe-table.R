@@ -1,4 +1,4 @@
-#' EDAS DB Table Description 
+#' EDAS DB Integration API Interface - EDAS DB Table Description 
 #' 테이블 스키마 정보 
 #' 
 #' @param connector EDAS.DB.API
@@ -8,7 +8,7 @@
 #' tableInfo - 테이블 스키마 
 #' sql - 쿼리 
 #' @importFrom  RMySQL dbDisconnect
-#' @family EDAS DB Integration API Interface
+#' @family EDAS
 #' @examples
 #' db_server <- "10.0.0.1" 
 #' db_port <- 13306
@@ -31,11 +31,11 @@ describe.table <- function(edas, table){
           call. = FALSE)
   }
   
-  connector <- EDAS::edas.db.api.createConnection(edas)
+  connector <- edas.db.api.createConnection(edas)
   sql_request <- paste0("DESCRIBE ",
                         tablename, 
                         ";")
-  resultset <- EDAS::edas.db.api.query(connector, sql_request)
+  resultset <- edas.db.api.query(connector, sql_request)
   RMySQL::dbDisconnect(connector)
   return(list("tableInfo"=resultset, "sql"=sql_request))
 }

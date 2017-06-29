@@ -44,19 +44,9 @@ edas.datavalidation.api.timeinterval <- function(dataset,
   }
   if (!is(dataset[,dateTimeColumn], "POSIXct"))
   {
-    tryCatch(
-      {
-        sprintf("Type Error - trying to parse the column %s with the default format: yyyymmddHHMMSS...")
-        dataset[,dateTimeColumn] <- EDAS::bems_db_timestamp(dataset[,dateTimeColumn])
-        print("OK!")
-      },
-      error=function(e){
-        print(e)
-        stop(sprintf("Failed to parse the column (%s) into the POSIXct datetime format.\n", 
+    stop(sprintf("Failed to parse the column (%s) into the POSIXct datetime format.\n", 
                      dateTimeColumn),
              call. = FALSE)
-      }
-    )
   }
   
   names(dataset)[names(dataset) == dateTimeColumn] <- "DateTime"

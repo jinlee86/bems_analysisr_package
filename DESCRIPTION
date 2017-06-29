@@ -1,14 +1,24 @@
 Package: EDAS
 Type: Package
 Title: EDAS System R Package 
-Version: 0.1.0
+Version: 0.2.0
 Author: person(given = "Yong Jin", 
-    family="Lee",email = "yjlee@mobigen.com", role="cre")
-Description: R library for interacting with BEMS (EDAS) System 
-Depends:
-    R (>= 3.2.0)
+    family="Lee",email = "yjlee@mobigen.com", role = c("aut", "cre"))
+Maintainer: Yong Jin Lee <yjlee@mobigen.com>
+Description: R library for interacting with the BEMS (EDAS) System 
+Depends: R (>= 3.2.0)
 Encoding: UTF-8
 LazyData: true
-Imports: RMySQL
+Imports: 
+  RMySQL,
+  dplyr,
+  ggplot2,
+  weights,
+  RColorBrewer,
+  cowplot,
+  methods,
+  optparse
+License: GPL-2
+LazyData: true
 RoxygenNote: 6.0.1
 Suggests: testthat

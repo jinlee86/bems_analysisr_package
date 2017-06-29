@@ -26,7 +26,4 @@ db_name <- "edas"
 dbConnector <- edas.db(db_username, db_password, db_name, db_server, db_port)
 edas.db.api.createConnection(dbConnector)
 }
-\seealso{
-Other EDAS DB Integration API Interface: \code{\link{describe.table}}
-}
 \keyword{internal}

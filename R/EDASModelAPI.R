@@ -1,27 +1,27 @@
 #' EDAS Analysis Model API - EDAS Analysis Model Initialization Method
 #'
-#' @import optparse
+#' @importFrom optparse make_option OptionParser
 #' @family EDAS
 #' @examples
-#' modelInit()
+#' edas.newModel()
 #' @export
-modelInit <- function()
+edas.newModel <- function()
 {
   if (!requireNamespace("optparse", quietly = TRUE)) {
     stop("optparse package is required!!",
          call. = FALSE)
   }
   option_list = list(
-    make_option(c("-timestamp", "--ts"), type="character", default=NULL, 
+    optparse::make_option(c("-timestamp", "--ts"), type="character", default=NULL, 
                 help="timestamp", metavar="character"),
-    make_option(c("-o", "--out"), type="character", default=NULL,
+    optparse::make_option(c("-o", "--out"), type="character", default=NULL,
                 help="output directory", metavar="character"),
-    make_option(c("-test", "--test"), type="character", default=TRUE, 
+    optparse::make_option(c("-test", "--test"), type="character", default=TRUE, 
                 help="output directory", metavar="character")
     
   ); 
   
-  opt_parser = OptionParser(option_list=option_list)
+  opt_parser = optparse::OptionParser(option_list=option_list)
   opt = parse_args(opt_parser)
   
   if (is.null(opt$ts)){
@@ -31,45 +31,7 @@ modelInit <- function()
     print_help(opt_parser)
     stop("Output directory is not specified", call.=FALSE)
   } 
- 
-  EDAS::initmodel()  
 }
-
-#' EDAS Analysis Model - Show Message 
-#'
-#' @import optparse
-#' @family EDAS
-#' @examples
-#' initModels()
-#' @export
-edas.initmodel <- function(){
-  if (length( intersect(search(), "EDAS_ANALYSIS_MODEL_PLOTS") ) > 0){
-    detach(EDAS_ANALYSIS_MODEL_PLOTS)
-  }
-  if (length( intersect(search(), "EDAS_ANALYSIS_MODEL_TABLES") ) > 0){
-    detach(EDAS_ANALYSIS_MODEL_TABLES)
-  }
-  if (length( intersect(search(), "EDAS_ANALYSIS_MODEL_MESSAGES") ) > 0){
-    detach(EDAS_ANALYSIS_MODEL_MESSAGES)
-  }
-  EDAS_DB_CONNECTION_OBJECT <- list(.EDAS_DB_CONNECTOR=.EDAS_DB_CONNECTOR, tables=table_list)
-  attach(EDAS_DB_CONNECTION_OBJECT, name="EDAS_DB_CONNECTION_OBJECT")
-  
-  .EDAS_ANALYSIS_PLOT_NAMES <- vector(mode="list")
-  .EDAS_ANALYSIS_PLOTS <- vector(mode="list")
-  .EDAS_ANALYSIS_MODEL_PLOTS <- list(Names=.EDAS_ANALYSIS_PLOT_NAMES, Plots=.EDAS_ANALYSIS_PLOTS)
-  attach(.EDAS_ANALYSIS_MODEL_PLOTS, name="EDAS_ANALYSIS_MODEL_PLOTS")
-
-  .EDAS_ANALYSIS_MESSAGES <- vector(mode="list")
-  .EDAS_ANALYSIS_MODEL_MESSAGES <- list(Messages=.EDAS_ANALYSIS_MESSAGES)
-  attach(.EDAS_ANALYSIS_MODEL_MESSAGES, name="EDAS_ANALYSIS_MODEL_MESSAGES")
-  
-  .EDAS_ANALYSIS_TABLE_NAMES <- vector(mode="list")
-  .EDAS_ANALYSIS_TABLES <- vector(mode="list")
-  .EDAS_ANALYSIS_MODEL_TABLES <- list(Names=.EDAS_ANALYSIS_TABLE_NAMES, Plots=.EDAS_ANALYSIS_TABLES)
-  attach(.EDAS_ANALYSIS_TABLES, name="EDAS_ANALYSIS_MODEL_TABLES")
-}
-
 
 
 

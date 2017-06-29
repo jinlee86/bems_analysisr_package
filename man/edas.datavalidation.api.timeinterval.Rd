@@ -46,10 +46,10 @@ dataset2 <- data.frame("DateTime"=seq(ISOdate(1911,1,1), ISOdate(2000,1,1), leng
 }
 \seealso{
 Other EDAS: \code{\link{EDAS.DB.API-class}},
+  \code{\link{describe.table}},
   \code{\link{edas.datapreprocessing.daytype}},
   \code{\link{edas.db.api.query}}, \code{\link{edas.db}},
-  \code{\link{edas.initmodel}},
-  \code{\link{get.table.sample}}, \code{\link{modelInit}},
-  \code{\link{validate.edas.data}}
+  \code{\link{edas.newModel}}, \code{\link{edas.validate}},
+  \code{\link{get.table.sample}}
 }
 \keyword{internal}

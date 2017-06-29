@@ -13,10 +13,10 @@ EDAS.DB.API Class
 EDAS DB 접속 정보 관리
 }
 \seealso{
-Other EDAS: \code{\link{edas.datapreprocessing.daytype}},
+Other EDAS: \code{\link{describe.table}},
+  \code{\link{edas.datapreprocessing.daytype}},
   \code{\link{edas.datavalidation.api.timeinterval}},
   \code{\link{edas.db.api.query}}, \code{\link{edas.db}},
-  \code{\link{edas.initmodel}},
-  \code{\link{get.table.sample}}, \code{\link{modelInit}},
-  \code{\link{validate.edas.data}}
+  \code{\link{edas.newModel}}, \code{\link{edas.validate}},
+  \code{\link{get.table.sample}}
 }

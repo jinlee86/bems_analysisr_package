@@ -33,9 +33,9 @@ get.table.sample(dbConnector, "EDAS_S_USAGE", 1)
 }
 \seealso{
 Other EDAS: \code{\link{EDAS.DB.API-class}},
+  \code{\link{describe.table}},
   \code{\link{edas.datapreprocessing.daytype}},
   \code{\link{edas.datavalidation.api.timeinterval}},
   \code{\link{edas.db.api.query}}, \code{\link{edas.db}},
-  \code{\link{edas.initmodel}}, \code{\link{modelInit}},
-  \code{\link{validate.edas.data}}
+  \code{\link{edas.newModel}}, \code{\link{edas.validate}}
 }

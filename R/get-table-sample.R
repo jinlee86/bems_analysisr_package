@@ -7,7 +7,7 @@
 #'
 #' @return sample data from the specified table 
 #'
-#' @import RMySQL
+#' @importFrom RMySQL dbDisconnect
 #' @family EDAS
 #' @examples
 #'db_server <- "10.0.0.1" 
@@ -45,8 +45,8 @@ get.table.sample <- function(edasDBObj, table, samplingrate){
                                "; ")
   )
   
-  connector <- EDAS::edas.db.api.createConnection(edasDBObj)
-  resultset <- EDAS::edas.db.api.query(connector, sql_request)
+  connector <- edas.db.api.createConnection(edasDBObj)
+  resultset <- edas.db.api.query(connector, sql_request)
   RMySQL::dbDisconnect(connector)
   return(list("tableInfo"=resultset, "sql"=sql_request))
 }

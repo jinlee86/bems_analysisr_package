@@ -38,7 +38,7 @@ edas.db <- function(username, password, database, host, port){
             serverIP=host,
             serverPort=port
   )
-  connector <- EDAS::edas.db.api.createConnection(obj) 
+  connector <- edas.db.api.createConnection(obj) 
   obj@tablelist <- RMySQL::dbListTables(connector)  
   obj@tables <- vector(mode="list")
   

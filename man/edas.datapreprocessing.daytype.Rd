@@ -41,9 +41,9 @@ edas.datapreprocessing.daytype(dataset, "Datetime", specialdays = specialdays )
 }
 \seealso{
 Other EDAS: \code{\link{EDAS.DB.API-class}},
+  \code{\link{describe.table}},
   \code{\link{edas.datavalidation.api.timeinterval}},
   \code{\link{edas.db.api.query}}, \code{\link{edas.db}},
-  \code{\link{edas.initmodel}},
-  \code{\link{get.table.sample}}, \code{\link{modelInit}},
-  \code{\link{validate.edas.data}}
+  \code{\link{edas.newModel}}, \code{\link{edas.validate}},
+  \code{\link{get.table.sample}}
 }

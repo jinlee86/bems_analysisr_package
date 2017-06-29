@@ -2,10 +2,10 @@
 % Please edit documentation in R/describe-table.R
 \name{describe.table}
 \alias{describe.table}
-\title{EDAS DB Table Description 
+\title{EDAS DB Integration API Interface - EDAS DB Table Description 
 테이블 스키마 정보}
 \usage{
-describe.table(edas, table)
+\method{describe}{table}(edas, table)
 }
 \arguments{
 \item{table}{테이블 명}
@@ -17,7 +17,7 @@ tableInfo - 테이블 스키마
 sql - 쿼리
 }
 \description{
-EDAS DB Table Description 
+EDAS DB Integration API Interface - EDAS DB Table Description 
 테이블 스키마 정보
 }
 \examples{
@@ -30,5 +30,10 @@ dbConnector <- edas.db(testuser_name, testuser_password, "edas", testpoc_server,
 describe.table(dbConnector, "EDAS_S_USAGE")
 }
 \seealso{
-Other EDAS DB Integration API Interface: \code{\link{edas.db.api.createConnection}}
+Other EDAS: \code{\link{EDAS.DB.API-class}},
+  \code{\link{edas.datapreprocessing.daytype}},
+  \code{\link{edas.datavalidation.api.timeinterval}},
+  \code{\link{edas.db.api.query}}, \code{\link{edas.db}},
+  \code{\link{edas.newModel}}, \code{\link{edas.validate}},
+  \code{\link{get.table.sample}}
 }
